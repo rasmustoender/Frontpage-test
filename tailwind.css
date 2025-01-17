@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* styles.css */
+.font-impact {
+    font-family: 'Impact', sans-serif;
+}
+
+.bg-overlay {
+    @apply absolute bottom-0 w-full flex flex-col justify-center items-center bg-white bg-opacity-75 p-4 text-center;
+}
+
+.section-title {
+    @apply text-red-500 text-sm font-impact;
+}
+
+.section-subtitle {
+    @apply text-black text-base font-impact;
+}
+
+.play-button {
+    @apply w-6 h-6 bg-gray-800 rounded-full flex items-center justify-center;
+}

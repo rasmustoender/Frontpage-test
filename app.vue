@@ -1,59 +1,47 @@
 <template>
-  <div class="min-h-screen bg-gray-100">
+  <div class="min-h-screen bg-[rgb(237,233,230)]">
     <!-- Header -->
     <header class="bg-red-600 text-white py-4 px-4">
       <h1 class="text-5xl font-impact text-left">SKÆBNER</h1>
     </header>
 
+
+
     <!-- Content -->
     <main class="container mx-auto flex flex-col md:flex-row gap-4 mt-6">
-      <!-- Left Section -->
+
       <section class="w-full md:w-2/3">
         <!-- Top Picture -->
-        <div class="relative mb-4">
-          <img
-              src="@/assets/sad_dog.png"
-              alt="Top Feature"
-              class="w-full h-60 object-cover"
-          />
-          <div
-              class="absolute bottom-0 w-full flex flex-col justify-center items-center bg-white bg-opacity-75 p-4 text-center"
-          >
-            <h2 class="text-red-500 text-xl font-impact">En læser fortæller</h2>
-            <p class="text-black text-sm font-impact">jeg higede efter omsorg - del 2:5</p>
-          </div>
-        </div>
+        <FeatureCard
+            imgSrc="sadDog"
+            altText="Top Feature"
+            title="En læser fortæller"
+            subtitle="jeg higede efter omsorg - del 2:5"
+            :showPlayButton="true"
+            style="height: 10rem"
+        />
 
         <!-- Bottom Pictures -->
         <div class="grid grid-cols-2 gap-4">
-          <div class="relative">
-            <img
-                src="@/assets/family.png"
-                alt="Bottom Left Feature"
-                class="w-full h-32 object-cover"
-            />
-            <div
-                class="absolute bottom-0 w-full flex flex-col justify-center items-center bg-white bg-opacity-75 p-4 text-center"
-            >
-              <h2 class="text-red-500 text-lg font-impact">Når livet gør ondt</h2>
-              <p class="text-black text-xs font-impact">Subtitle</p>
-            </div>
-          </div>
-          <div class="relative">
-            <img
-                src="@/assets/couple.png"
-                alt="Bottom Right Feature"
-                class="w-full h-32 object-cover"
-            />
-            <div
-                class="absolute bottom-0 w-full flex flex-col justify-center items-center bg-white bg-opacity-75 p-4 text-center"
-            >
-              <h2 class="text-red-500 text-lg font-impact">Når livet gør ondt</h2>
-              <p class="text-black text-xs font-impact">Subtitle</p>
-            </div>
-          </div>
+          <FeatureCard
+              imgSrc="family"
+              altText="Bottom Left Feature"
+              title="Når livet gør ondt"
+              subtitle="33-årige Dagmar har måske kun få måneder tilbage"
+              :showPlayButton="false"
+              style="height: 10rem"
+          />
+          <FeatureCard
+              imgSrc="couple"
+              altText="Bottom Right Feature"
+              title="Når livet gør ondt"
+              subtitle="Stinne og Christian er uhelbredeligt syge med kræft"
+              :showPlayButton="false"
+              style="height: 10rem"
+          />
         </div>
       </section>
+
 
       <!-- Right Section -->
       <aside class="w-full md:w-1/3">
@@ -78,8 +66,13 @@
 </template>
 
 <script setup>
-/* Add setup logic if needed */
+import FeatureCard from '@/src/FeatureCard.vue';
+
+import sadDog from '@/assets/sad_dog.png';
+import family from '@/assets/family.png';
+import couple from '@/assets/couple.png';
 </script>
+
 
 <style>
 /* Add custom styles if needed */
